@@ -1,29 +1,40 @@
-# Rudder-Leanplum
-
-[![CI Status](https://img.shields.io/travis/arnabp92/Rudder-Leanplum.svg?style=flat)](https://travis-ci.org/arnabp92/Rudder-Leanplum)
+# WORK IN PROGRESS
 [![Version](https://img.shields.io/cocoapods/v/Rudder-Leanplum.svg?style=flat)](https://cocoapods.org/pods/Rudder-Leanplum)
-[![License](https://img.shields.io/cocoapods/l/Rudder-Leanplum.svg?style=flat)](https://cocoapods.org/pods/Rudder-Leanplum)
 [![Platform](https://img.shields.io/cocoapods/p/Rudder-Leanplum.svg?style=flat)](https://cocoapods.org/pods/Rudder-Leanplum)
 
-## Example
+# What is Rudder?
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+**Short answer:** 
+Rudder is an open-source Segment alternative written in Go, built for the enterprise. .
 
-## Requirements
+**Long answer:** 
+Rudder is a platform for collecting, storing and routing customer event data to dozens of tools. Rudder is open-source, can run in your cloud environment (AWS, GCP, Azure or even your data-centre) and provides a powerful transformation framework to process your event data on the fly.
 
-## Installation
+Released under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 
-Rudder-Leanplum is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+## Getting Started with Leanplum Integration of iOS SDK
+1. Add [Leanplum](https://www.leanplum.com) as a destination in the [Dashboard](https://app.rudderlabs.com/) and provide ```applicationId``` and `clientKey` from your Leanplum dashboard. Provide the `devClientKey` if you have turned on the `Development Environment` flag. Provide the `prodClientKey` otherwise.
+
+2. Rudder-Leanplum is available through [CocoaPods](https://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'Rudder-Leanplum'
+pod 'Rudder', '~> 1.0.1-beta.3'
+pod 'Rudder-Leanplum', '~> 1.0.1-beta.1'
 ```
 
-## Author
+## Initialize ```RudderClient```
+Put this code in your ```AppDelegate.m``` file under the method ```didFinishLaunchingWithOptions```
+```
+RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
+[builder withEndPointUrl:<YOUR_DATA_PLANE_URL>];
+[builder withFactory:[RudderLeanplumFactory instance]];
+[RudderClient getInstance:<YOUR_WRITE_KEY> config:[builder build]];
+```
 
-arnabp92, arnab@rudderlabs.com
+## Send Events
+Follow the steps from [Rudder iOS SDK](https://github.com/rudderlabs/rudder-sdk-ios)
 
-## License
-
-Rudder-Leanplum is available under the MIT license. See the LICENSE file for more info.
+# Coming Soon
+1. Native platform SDK integration support
+2. More documentation
+3. More destination support
