@@ -34,7 +34,5 @@ RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
 ## Send Events
 Follow the steps from [Rudder iOS SDK](https://github.com/rudderlabs/rudder-sdk-ios)
 
-# Coming Soon
-1. Native platform SDK integration support
-2. More documentation
-3. More destination support
+## Contact Us
+If you come across any issues while configuring or using RudderStack, please feel free to [contact us](https://rudderstack.com/contact/) or start a conversation on our [Discord](https://discordapp.com/invite/xNEdEGw) channel. We will be happy to help you.
