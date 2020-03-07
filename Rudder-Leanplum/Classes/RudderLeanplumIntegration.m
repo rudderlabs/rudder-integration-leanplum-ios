@@ -71,22 +71,42 @@
     } else if ([type isEqualToString:@"track"]) {
         if (message.event != nil) {
             NSDictionary *properties = message.properties;
-            id value = [properties objectForKey:@"value"];
-            if (value != nil) {
-                if ([value isKindOfClass:[NSNumber class]]) {
-                    double val = [value doubleValue];
-                    [Leanplum track:message.event withValue:val andParameters:properties];
+            properties = [self filterProperties:properties];
+            if (properties != nil) {
+                id value = [properties objectForKey:@"value"];
+                if (value != nil) {
+                    if ([value isKindOfClass:[NSNumber class]]) {
+                        double val = [value doubleValue];
+                        [Leanplum track:message.event withValue:val andParameters:properties];
+                    } else {
+                        [Leanplum track:message.event withParameters:properties];
+                    }
                 } else {
-                    [Leanplum track:message.event withParameters:message.properties];
+                    [Leanplum track:message.event withParameters:properties];
                 }
             } else {
-                [Leanplum track:message.event withParameters:message.properties];
+                [Leanplum track:message.event];
             }
         }
     } else if ([type isEqualToString:@"screen"]) {
         if (message.event != nil) {
             [Leanplum advanceTo:message.event withParameters:message.properties];
         }
+    }
+}
+
+- (NSDictionary*) filterProperties: (NSDictionary*) properties {
+    if (properties != nil) {
+        NSMutableDictionary *filteredProperties = [[NSMutableDictionary alloc] init];
+        for (NSString *key in properties.allKeys) {
+            id val = properties[key];
+            if ([val isKindOfClass:[NSString class]] || [val isKindOfClass:[NSNumber class]]) {
+                filteredProperties[key] = val;
+            }
+        }
+        return filteredProperties;
+    } else {
+        return nil;
     }
 }
 

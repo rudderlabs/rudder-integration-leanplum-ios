@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Rudder-Leanplum'
-  s.version          = '0.1.0-beta.2'
+  s.version          = '0.1.0-beta.3'
   s.summary          = 'Privacy and Security focused Segment-alternative. Leanplum Native SDK integration support.'
 
   s.description      = <<-DESC

@@ -10,7 +10,7 @@
 #import <Rudder/Rudder.h>
 #import "RudderLeanplumFactory.h"
 
-static NSString *END_POINT_URL = @"https://316700db.ngrok.io";
+static NSString *END_POINT_URL = @"https://fee75804.ngrok.io";
 static NSString *CONFIG_POINT_URL = @"https://api.dev.rudderlabs.com";
 static NSString *WRITE_KEY = @"1YQncoY8v5ux8BV60TQgfqIFMM5";
 
