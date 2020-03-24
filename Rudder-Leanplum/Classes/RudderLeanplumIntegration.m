@@ -19,6 +19,7 @@
         NSString *appId = config[@"applicationId"];
         NSString *clientKey = config[@"clientKey"];
         BOOL isDevelop = config[@"isDevelop"];
+        self.sendEvents = config[@"useNativeSDKToSend"];
         
         if (appId != nil && clientKey != nil) {
             if (isDevelop) {
@@ -54,7 +55,7 @@
 
 - (void) dump:(RudderMessage *)message {
     @try {
-        if (message != nil) {
+        if (self.sendEvents && message != nil) {
             dispatch_async(dispatch_get_main_queue(), ^{
               [self processRudderEvent:message];
             });

@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RudderLeanplumIntegration : NSObject<RudderIntegration>
 
+@property (nonatomic) BOOL sendEvents;
+
 - (instancetype)initWithConfig:(NSDictionary *)config withAnalytics:(RudderClient *)client withRudderConfig:(RudderConfig*) rudderConfig;
 
 @end
