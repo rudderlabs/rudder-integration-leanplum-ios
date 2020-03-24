@@ -19,7 +19,7 @@ Released under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 
 ```ruby
 pod 'Rudder', '1.0.1-beta.4'
-pod 'Rudder-Leanplum', '0.1.0-beta.4'
+pod 'Rudder-Leanplum', '0.1.0-beta.5'
 ```
 
 ## Initialize ```RudderClient```
