@@ -18,8 +18,8 @@
     if (self) {
         NSString *appId = config[@"applicationId"];
         NSString *clientKey = config[@"clientKey"];
-        BOOL isDevelop = config[@"isDevelop"];
-        self.sendEvents = config[@"useNativeSDKToSend"];
+        BOOL isDevelop = [[config objectForKey:@"isDevelop"] boolValue];
+        self.sendEvents = [[config objectForKey:@"useNativeSDKToSend"] boolValue];
         
         if (appId != nil && clientKey != nil) {
             if (isDevelop) {

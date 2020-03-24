@@ -10,9 +10,9 @@
 #import <Rudder/Rudder.h>
 #import "RudderLeanplumFactory.h"
 
-static NSString *DATA_PLANE_URL = @"https://edbe3859.ngrok.io";
-static NSString *CONTROL_PLANE_URL = @"https://edbe3859.ngrok.io";
-static NSString *WRITE_KEY = @"1YQncoY8v5ux8BV60TQgfqIFMM5";
+static NSString *DATA_PLANE_URL = @"https://1067ea42.ngrok.io";
+static NSString *CONTROL_PLANE_URL = @"https://1067ea42.ngrok.io";
+static NSString *WRITE_KEY = @"1Zag1Le2RcAMFzJBJjSIyqfKJyL";
 
 @implementation _AppDelegate
 
