@@ -1,6 +1,3 @@
-[![Version](https://img.shields.io/cocoapods/v/Rudder-Leanplum.svg?style=flat)](https://cocoapods.org/pods/Rudder-Leanplum)
-[![Platform](https://img.shields.io/cocoapods/p/Rudder-Leanplum.svg?style=flat)](https://cocoapods.org/pods/Rudder-Leanplum)
-
 # What is Rudder?
 
 **Short answer:** 
@@ -14,11 +11,15 @@ Released under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 ## Getting Started with Leanplum Integration of iOS SDK
 1. Add [Leanplum](https://www.leanplum.com) as a destination in the [Dashboard](https://app.rudderlabs.com/) and provide ```applicationId``` and `clientKey` from your Leanplum dashboard. Provide the `devClientKey` if you have turned on the `Development Environment` flag. Provide the `prodClientKey` otherwise.
 
-2. Rudder-Leanplum is available through [CocoaPods](https://cocoapods.org). To install it, simply add the following line to your Podfile:
+2. Setup the Hybrid Mode of integration: 
+  - Turning on the switch beside `Initialize Native SDK to send automated events` in the dashboard will initialize the LeanPlum native SDK in the application.
+  - Turning on the switch beside `Use native SDK to send user generated events` in the dashboard will instruct your `data-plane` to skip the events for LeanPlum and the events will be sent from the LeanPlum SDK.
+
+3. Rudder-Leanplum is available through [CocoaPods](https://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'Rudder', '1.0.1-beta.3'
-pod 'Rudder-Leanplum', '0.1.0-beta.3'
+pod 'Rudder', '1.0.1-beta.4'
+pod 'Rudder-Leanplum', '0.1.0-beta.4'
 ```
 
 ## Initialize ```RudderClient```
