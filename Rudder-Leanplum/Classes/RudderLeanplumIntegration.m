@@ -6,14 +6,13 @@
 //
 
 #import "RudderLeanplumIntegration.h"
-#import "RudderLogger.h"
 #import <Leanplum/Leanplum.h>
 
 @implementation RudderLeanplumIntegration
 
 #pragma mark - Initialization
 
-- (instancetype) initWithConfig:(NSDictionary *)config withAnalytics:(nonnull RudderClient *)client  withRudderConfig:(nonnull RudderConfig *)rudderConfig {
+- (instancetype) initWithConfig:(NSDictionary *)config withAnalytics:(nonnull RSClient *)client  withRudderConfig:(nonnull RSConfig *)rudderConfig {
     self = [super init];
     if (self) {
         NSString *appId = config[@"applicationId"];
@@ -28,7 +27,7 @@
                 [Leanplum setAppId:appId withProductionKey:clientKey];
             }
             
-            if (rudderConfig.logLevel >= RudderLogLevelDebug) {
+            if (rudderConfig.logLevel >= RSLogLevelDebug) {
                 [Leanplum setVerboseLoggingInDevelopmentMode:YES];
             } else {
                 [Leanplum setVerboseLoggingInDevelopmentMode:NO];
@@ -49,11 +48,11 @@
         }
         
     }
-    [RudderLogger logDebug:@"Initializing Leanplum SDK"];
+    [RSLogger logDebug:@"Initializing Leanplum SDK"];
     return self;
 }
 
-- (void) dump:(RudderMessage *)message {
+- (void) dump:(RSMessage *)message {
     @try {
         if (self.sendEvents && message != nil) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -61,11 +60,11 @@
             });
         }
     } @catch (NSException *ex) {
-        [RudderLogger logError:[[NSString alloc] initWithFormat:@"%@", ex]];
+        [RSLogger logError:[[NSString alloc] initWithFormat:@"%@", ex]];
     }
 }
 
-- (void) processRudderEvent: (nonnull RudderMessage *) message {
+- (void) processRudderEvent: (nonnull RSMessage *) message {
     NSString *type = message.type;
     if ([type isEqualToString:@"identify"]) {
         [Leanplum setUserId:message.userId withUserAttributes:message.context.traits];

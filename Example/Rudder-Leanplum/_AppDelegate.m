@@ -19,12 +19,12 @@ static NSString *WRITE_KEY = @"1Zag1Le2RcAMFzJBJjSIyqfKJyL";
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
-    [builder withEndPointUrl:DATA_PLANE_URL];
-    [builder withConfigPlaneUrl:CONTROL_PLANE_URL];
+    RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
+    [builder withDataPlaneUrl:DATA_PLANE_URL];
+    [builder withControlPlaneUrl:CONTROL_PLANE_URL];
     [builder withFactory:[RudderLeanplumFactory instance]];
-    [builder withLoglevel:RudderLogLevelDebug];
-    [RudderClient getInstance:WRITE_KEY config:[builder build]];
+    [builder withLoglevel:RSLogLevelDebug];
+    [RSClient getInstance:WRITE_KEY config:[builder build]];
     return YES;
 }
 

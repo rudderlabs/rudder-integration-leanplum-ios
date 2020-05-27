@@ -6,16 +6,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RudderIntegration.h"
-#import "RudderClient.h"
+#import <Rudder/Rudder.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RudderLeanplumIntegration : NSObject<RudderIntegration>
+@interface RudderLeanplumIntegration : NSObject<RSIntegration>
 
 @property (nonatomic) BOOL sendEvents;
 
-- (instancetype)initWithConfig:(NSDictionary *)config withAnalytics:(RudderClient *)client withRudderConfig:(RudderConfig*) rudderConfig;
+- (instancetype)initWithConfig:(NSDictionary *)config withAnalytics:(RSClient *)client withRudderConfig:(RSConfig*) rudderConfig;
 
 @end
 
