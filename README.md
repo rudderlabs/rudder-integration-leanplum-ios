@@ -18,7 +18,7 @@ Released under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 3. Rudder-Leanplum is available through [CocoaPods](https://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'Rudder-Leanplum', '0.1.1'
+pod 'Rudder-Leanplum'
 ```
 
 ## Initialize ```RudderClient```
