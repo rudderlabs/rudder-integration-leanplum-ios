@@ -28,9 +28,9 @@
             }
             
             if (rudderConfig.logLevel >= RSLogLevelDebug) {
-                [Leanplum setVerboseLoggingInDevelopmentMode:YES];
+                [Leanplum setLogLevel:LPLogLevelDebug];
             } else {
-                [Leanplum setVerboseLoggingInDevelopmentMode:NO];
+                [Leanplum setLogLevel:LPLogLevelOff];
             }
             
             NSMutableDictionary *traits = [client getContext].traits;
@@ -133,6 +133,10 @@
 
 - (void) reset {
     [Leanplum clearUserContent];
+}
+
+- (void)flush {
+    
 }
 
 @end

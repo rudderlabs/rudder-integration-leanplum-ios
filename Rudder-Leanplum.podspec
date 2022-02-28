@@ -13,10 +13,10 @@ Rudder is a platform for collecting, storing and routing customer event data to 
   s.source           = { :git => 'https://github.com/rudderlabs/rudder-integration-leanplum-ios.git', :tag => 'v1.0.1' }
   s.platform         = :ios, "9.0"
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'Rudder-Leanplum/Classes/**/*'
 
-  s.dependency 'Rudder'
-  s.dependency 'Leanplum-iOS-SDK'
+  s.dependency 'Rudder', '~> 1.0'
+  s.dependency 'Leanplum-iOS-SDK', '4.0.0'
 end
