@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Rudder-Leanplum'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'Privacy and Security focused Segment-alternative. Leanplum Native SDK integration support.'
 
   s.description      = <<-DESC
@@ -10,13 +10,13 @@ Rudder is a platform for collecting, storing and routing customer event data to 
   s.homepage         = 'https://github.com/rudderlabs/rudder-integration-leanplum-ios'
   s.license          = { :type => "Apache", :file => "LICENSE" }
   s.author           = { 'RudderStack' => 'arnab@rudderlabs.com' }
-  s.source           = { :git => 'https://github.com/rudderlabs/rudder-integration-leanplum-ios.git', :tag => 'v1.0.1' }
+  s.source           = { :git => 'https://github.com/rudderlabs/rudder-integration-leanplum-ios.git', :tag => 'v1.0.2' }
   s.platform         = :ios, "9.0"
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'Rudder-Leanplum/Classes/**/*'
 
-  s.dependency 'Rudder'
-  s.dependency 'Leanplum-iOS-SDK'
+  s.dependency 'Rudder', '~> 1.0'
+  s.dependency 'Leanplum-iOS-SDK', '4.0.0'
 end
