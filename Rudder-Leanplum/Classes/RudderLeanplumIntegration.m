@@ -27,11 +27,7 @@
                 [Leanplum setAppId:appId withProductionKey:clientKey];
             }
             
-            if (rudderConfig.logLevel >= RSLogLevelDebug) {
-                [Leanplum setLogLevel:LPLogLevelDebug];
-            } else {
-                [Leanplum setLogLevel:LPLogLevelOff];
-            }
+            [self setLogLevel : [rudderConfig logLevel]];
             
             NSMutableDictionary *traits = [client getContext].traits;
             NSString *userId = traits[@"userId"];
@@ -137,6 +133,27 @@
 
 - (void)flush {
     
+}
+
+#pragma mark - Utils
+
+-(void) setLogLevel:(int) rsLogLevel {
+    if (rsLogLevel >= RSLogLevelDebug)
+    {
+        [Leanplum setLogLevel:LPLogLevelDebug];
+        return;
+    }
+    if (rsLogLevel == RSLogLevelInfo)
+    {
+        [Leanplum setLogLevel:LPLogLevelInfo];
+        return;
+    }
+    if (rsLogLevel >= RSLogLevelError)
+    {
+        [Leanplum setLogLevel:LPLogLevelError];
+        return;
+    }
+    [Leanplum setLogLevel:LPLogLevelOff];
 }
 
 @end
