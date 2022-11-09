@@ -1,0 +1,35 @@
+PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - Leanplum-iOS-SDK (4.0.0)
+  - Rudder (1.5.2)
+  - Rudder-Leanplum (1.0.1):
+    - Leanplum-iOS-SDK (= 4.0.0)
+    - Rudder (~> 1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - Rudder-Leanplum (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - FBSnapshotTestCase
+    - Leanplum-iOS-SDK
+    - Rudder
+
+EXTERNAL SOURCES:
+  Rudder-Leanplum:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  Leanplum-iOS-SDK: 8115f65d185eb94d94c4ab08176dfcb4a8b97926
+  Rudder: 557cc105d77f365821d78403b1abacfd2e3018de
+  Rudder-Leanplum: f5aa881955535372058adfdae4def70240082175
+
+PODFILE CHECKSUM: bb8f399333833d10488f1e608909a45858b40535
+
+COCOAPODS: 1.11.2
