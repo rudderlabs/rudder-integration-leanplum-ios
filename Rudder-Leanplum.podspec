@@ -12,7 +12,7 @@ Rudder is a platform for collecting, storing and routing customer event data to 
                        DESC
 
   s.homepage         = 'https://github.com/rudderlabs/rudder-integration-leanplum-ios'
-  s.license          = { :type => "Apache", :file => "LICENSE" }
+  s.license          = { :type => "ELv2", :file => "LICENSE.md" }
   s.author           = { 'RudderStack' => 'arnab@rudderlabs.com' }
   s.source           = { :git => 'https://github.com/rudderlabs/rudder-integration-leanplum-ios.git', :tag => "v#{s.version}" }
   s.platform         = :ios, "9.0"
